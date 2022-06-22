@@ -24,31 +24,6 @@ fun Application.configureTemplating() {
                 title = "Amber"
 
                 head {
-                    meta {
-                        httpEquiv = "cache-control"
-                        content = "max-age=0"
-                    }
-
-                    meta {
-                        httpEquiv = "cache-control"
-                        content = "no-cache"
-                    }
-
-                    meta {
-                        httpEquiv = "expires"
-                        content = "0"
-                    }
-
-                    meta {
-                        httpEquiv = "expires"
-                        content = "Tue, 01 Jan 1980 1:00:00 GMT"
-                    }
-
-                    meta {
-                        httpEquiv = "pragma"
-                        content = "no-cache"
-                    }
-
                     meta("viewport") {
                         content = "width=device-width, minimum-scale=0.1"
                     }
@@ -80,6 +55,11 @@ fun Application.configureTemplating() {
 
                 body {
                     h1 { +"uwu" }
+                    img {
+                        this.src = "https://a.lily.lol/imgs/${randomImg.name}"
+                        this.width = "880"
+                        this.width = "660"
+                    }
                 }
             }
         }
