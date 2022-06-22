@@ -7,8 +7,6 @@ import io.ktor.server.routing.*
 import kotlinx.html.*
 import java.io.File
 
-const val flag = "\uD83C\uDFF3️\u200D⚧️"
-
 fun Application.configureTemplating() {
     val path = System.getenv()["PIC_PATH"] ?: "C:\\Users\\lilya\\Desktop\\amb"
     val amberPath = File(path)
@@ -26,12 +24,28 @@ fun Application.configureTemplating() {
                 title = "Amber"
 
                 head {
+                    meta("viewport") {
+                        content = "width=device-width, minimum-scale=0.1"
+                    }
+
+                    meta("twitter:card") {
+                        content = "summary_large_image"
+                    }
+
+                    meta("theme-color") {
+                        content = "#d154ff"
+                    }
+
+                    meta("og:url") {
+                        content = "https://a.lily.lol/${randomImg.name}"
+                    }
+
                     meta("og:title") {
                         content = "Amber Pics!"
                     }
 
                     meta("og:description") {
-                        content = "$flag https://a.lily.lol for random amber picture $flag"
+                        content = "https://a.lily.lol for random amber picture"
                     }
 
                     meta("og:image") {
